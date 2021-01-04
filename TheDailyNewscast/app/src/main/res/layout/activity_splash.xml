@@ -13,12 +13,12 @@
         android:id="@+id/tvTheDaily"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
+        android:layout_marginBottom="@dimen/dp_25"
         android:fontFamily="serif-monospace"
-        android:text="The Daily"
+        android:text="@string/the_daily"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="42sp"
+        android:textSize="@dimen/sp_42"
         android:textStyle="bold" />
 
     <ImageView
@@ -31,12 +31,12 @@
         android:id="@+id/tvNewscast"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="@dimen/dp_25"
         android:fontFamily="serif-monospace"
-        android:text="Newscast"
+        android:text="@string/newscast"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="42sp"
+        android:textSize="@dimen/sp_42"
         android:textStyle="bold" />
 
 </LinearLayout>

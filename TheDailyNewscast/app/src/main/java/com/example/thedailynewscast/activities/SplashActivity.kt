@@ -1,11 +1,11 @@
-package com.example.thedailynewscast
+package com.example.thedailynewscast.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import com.example.thedailynewscast.R
 import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : AppCompatActivity() {
@@ -25,9 +25,15 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun animationOnSplash() {
-        val splashAnimation = AnimationUtils.loadAnimation(this, R.anim.transitions_splash)
-        val lTRAnimation = AnimationUtils.loadAnimation(this, R.anim.left_to_right)
-        val rTLAnimation = AnimationUtils.loadAnimation(this, R.anim.right_to_left)
+        val splashAnimation = AnimationUtils.loadAnimation(this,
+            R.anim.transitions_splash
+        )
+        val lTRAnimation = AnimationUtils.loadAnimation(this,
+            R.anim.left_to_right
+        )
+        val rTLAnimation = AnimationUtils.loadAnimation(this,
+            R.anim.right_to_left
+        )
         tvTheDaily.animation = lTRAnimation
         ivNewsLogo.animation = splashAnimation
         tvNewscast.animation = rTLAnimation

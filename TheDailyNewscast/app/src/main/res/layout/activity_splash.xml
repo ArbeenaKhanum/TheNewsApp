@@ -7,7 +7,7 @@
     android:background="#D6A40E"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".SplashActivity">
+    tools:context=".activities.SplashActivity">
 
     <ImageView
         android:id="@+id/newsIconOne"

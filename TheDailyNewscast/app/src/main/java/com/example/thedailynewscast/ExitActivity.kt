@@ -13,6 +13,6 @@ class ExitActivity : AppCompatActivity() {
             finish()
         }
         val handler = Handler()
-        handler.postDelayed(runnable, 2000)
+        handler.postDelayed(runnable, 2700)
     }
 }

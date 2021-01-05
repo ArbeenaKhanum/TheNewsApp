@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FAEDC9"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".ExitActivity">
@@ -30,7 +31,7 @@
         android:layout_height="wrap_content"
         android:text="Thank you"
         android:textAlignment="center"
-        android:textColor="@color/purple_200"
+        android:textColor="#9E5EED"
         android:textSize="20sp"
         android:textStyle="bold" />
 

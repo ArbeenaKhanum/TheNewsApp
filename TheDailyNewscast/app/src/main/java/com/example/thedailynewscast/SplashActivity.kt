@@ -14,12 +14,12 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         val runnable = Runnable {
-            val splashIntent = Intent(this, MainActivity::class.java)
+            val splashIntent = Intent(this, LoginActivity::class.java)
             startActivity(splashIntent)
             finish()
         }
         val handler = Handler()
-        handler.postDelayed(runnable, 3000)
+        handler.postDelayed(runnable, 3200)
 
         animationOnSplash()
     }
@@ -31,5 +31,7 @@ class SplashActivity : AppCompatActivity() {
         tvTheDaily.animation = lTRAnimation
         ivNewsLogo.animation = splashAnimation
         tvNewscast.animation = rTLAnimation
+        newsIconOne.animation = splashAnimation
+        newsIconTwo.animation = splashAnimation
     }
 }

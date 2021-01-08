@@ -1,4 +1,4 @@
-package com.example.thedailynewscast
+package com.thenewsapp.thedailynewscast
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

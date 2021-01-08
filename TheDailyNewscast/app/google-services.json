@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "906204319175",
+    "project_id": "the-daily-newscast",
+    "storage_bucket": "the-daily-newscast.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:906204319175:android:a45628f609791389c71de2",
+        "android_client_info": {
+          "package_name": "com.thenewsapp.thedailynewscast"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "906204319175-cq517upsl3i8s6gspp8lmd46ujjmr7f7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.thenewsapp.thedailynewscast.activities",
+            "certificate_hash": "3d2f7cba6ef2601b6c0b072dcfe8b69326e6cde7"
+          }
+        },
+        {
+          "client_id": "906204319175-dri1rq3mjce0upupc68a1lmnksdjfhsk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCvi_5ASfPqrCM-kZ_HiV_c4WskRCkUNc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "906204319175-dri1rq3mjce0upupc68a1lmnksdjfhsk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

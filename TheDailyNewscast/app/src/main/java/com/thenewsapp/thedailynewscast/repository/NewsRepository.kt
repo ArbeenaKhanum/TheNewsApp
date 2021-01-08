@@ -1,8 +1,8 @@
-package com.example.thedailynewscast.repository
+package com.thenewsapp.thedailynewscast.repository
 
-import com.example.thedailynewscast.Network.ApiClient
-import com.example.thedailynewscast.Network.Network
-import com.example.thedailynewscast.models.NewsResponseModel
+import com.thenewsapp.thedailynewscast.Network.ApiClient
+import com.thenewsapp.thedailynewscast.Network.Network
+import com.thenewsapp.thedailynewscast.models.NewsResponseModel
 import retrofit2.Callback
 
 class NewsRepository(private val callback: Callback<NewsResponseModel>) {

@@ -1,40 +1,23 @@
-package com.thenewsapp.thedailynewscast.activities
+package com.thenewsapp.thedailynewscast.activities.activitiesfiles
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentPagerAdapter
 import com.google.firebase.database.*
 import com.mohitdev.verticalviewpager.VerticalViewPager
-import com.thenewsapp.thedailynewscast.Network.ApiClient
-import com.thenewsapp.thedailynewscast.Network.Network
-import com.thenewsapp.thedailynewscast.R
-import com.thenewsapp.thedailynewscast.SliderContents
-import com.thenewsapp.thedailynewscast.VerticalSwipeViewPager
-import com.thenewsapp.thedailynewscast.ViewPagerAdapter
-import com.thenewsapp.thedailynewscast.adapter.FragmentsAdapter
-import com.thenewsapp.thedailynewscast.adapter.NewsListAdapter
-import com.thenewsapp.thedailynewscast.fragments.NewsDetailsFragment
-import com.thenewsapp.thedailynewscast.fragments.ReadMoreFragment
-import com.thenewsapp.thedailynewscast.fragments.UrlViewFragment
-import com.thenewsapp.thedailynewscast.listener.ReadMoreNewsListener
-import com.thenewsapp.thedailynewscast.listener.UrlFragmentListener
-import com.thenewsapp.thedailynewscast.models.DataItem
-import com.thenewsapp.thedailynewscast.models.NewsResponseModel
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.news_content_layout.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import java.net.HttpURLConnection
+import com.thenewsapp.thedailynewscast.activities.SliderContents
+import com.thenewsapp.thedailynewscast.activities.adapter.NewsSearchListAdapter
+import com.thenewsapp.thedailynewscast.activities.models.DataItem
+import com.thenewsapp.thedailynewscast.activities.verticalviewpager.VerticalSwipeViewPager
+import com.thenewsapp.thedailynewscast.activities.verticalviewpager.ViewPagerAdapter
+import com.thenewsapp.thedailynewscast.activities.R
 
 
-class MainActivity : AppCompatActivity(), UrlFragmentListener, ReadMoreNewsListener {
-    private lateinit var fragmentsAdapter: FragmentsAdapter
+class MainActivity : AppCompatActivity() {
+    private lateinit var newsSearchListAdapter: NewsSearchListAdapter
     private lateinit var verticalViewPager: VerticalSwipeViewPager
     private lateinit var viewPagerAdapter: ViewPagerAdapter
 
-    private lateinit var newsListAdapter: NewsListAdapter
     private val dataItemList = emptyList<DataItem>()
     val dataItem: DataItem? = null
 
@@ -81,8 +64,11 @@ class MainActivity : AppCompatActivity(), UrlFragmentListener, ReadMoreNewsListe
                     sliderContents.add(SliderContents(imageUrl[i]))
                 }
 
-                mainVerticalViewPager.adapter = ViewPagerAdapter(this@MainActivity, sliderContents,
-                    title, content, imageUrl, readMoreUrl, url, mainVerticalViewPager)
+                mainVerticalViewPager.adapter =
+                    ViewPagerAdapter(
+                        this@MainActivity, sliderContents,
+                        title, content, imageUrl, readMoreUrl, url, mainVerticalViewPager
+                    )
             }
 
         })
@@ -119,10 +105,10 @@ class MainActivity : AppCompatActivity(), UrlFragmentListener, ReadMoreNewsListe
 //    }
 
     private fun setViewPagerAdapter() {
-        fragmentsAdapter = FragmentsAdapter(
-            supportFragmentManager,
-            FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
-        )
+ //       newsSearchListAdapter = NewsSearchListAdapter(
+//            supportFragmentManager,
+//            FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
+//        )
     }
 
     private fun setViewPager() {
@@ -134,32 +120,15 @@ class MainActivity : AppCompatActivity(), UrlFragmentListener, ReadMoreNewsListe
         startActivity(openCategoryIntent)
     }
 
-    private fun launchNewsDetailsFragment() {
-        val newsDetailsFragment = NewsDetailsFragment()
-//        supportFragmentManager.beginTransaction().add(R.id.flContainer, newsDetailsFragment, "NewsDetailsFragment").commit()
-    }
 
-    override fun onFragmentDataPassed(dataItem: DataItem) {
-        val urlViewFragment = UrlViewFragment()
-        val bundle = Bundle()
-        bundle.putString("urlLinkText", dataItem.url)
-        urlViewFragment.arguments = bundle
-//        supportFragmentManager.beginTransaction().replace(R.id.flContainer, urlViewFragment, "UrlViewFragment")
-//            .addToBackStack("urlViewFragment").commit()
-    }
 
-    override fun onFragmentReadMorePassed(dataItem: DataItem) {
-        val readMoreFragment = ReadMoreFragment()
-        val bundleRead = Bundle()
-        bundleRead.putString("readMoreImg", dataItem.imageUrl)
-        bundleRead.putString("readMoreHeadline", dataItem.title)
-        bundleRead.putString("readMoreDesc", dataItem.content)
-        bundleRead.putString("readMoreTime", dataItem.time)
-        bundleRead.putString("readMoreDate", dataItem.date)
-        bundleRead.putString("readMoreAuthor", dataItem.author)
 
-        readMoreFragment.arguments = bundleRead
-//        supportFragmentManager.beginTransaction().replace(R.id.flContainer, readMoreFragment, "ReadMoreFragment")
-//            .addToBackStack("readMoreFragment").commit()
-    }
+//        val urlViewFragment = PoliticsViewFragment()
+//        val bundle = Bundle()
+//        bundle.putString("urlLinkText", dataItem.url)
+//        urlViewFragment.arguments = bundle
+////        supportFragmentManager.beginTransaction().replace(R.id.flContainer, urlViewFragment, "UrlViewFragment")
+////            .addToBackStack("urlViewFragment").commit()
+
+
 }

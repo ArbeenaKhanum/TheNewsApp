@@ -1,9 +1,8 @@
-package com.thenewsapp.thedailynewscast
+package com.thenewsapp.thedailynewscast.activities.verticalviewpager
 
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
@@ -11,17 +10,14 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.bumptech.glide.Glide
 import com.mohitdev.verticalviewpager.VerticalViewPager
-import com.thenewsapp.thedailynewscast.activities.CategoryActivity
-import com.thenewsapp.thedailynewscast.activities.NewsUrlDetailsActivity
-import com.thenewsapp.thedailynewscast.fragments.NewsDetailsFragment
-import com.thenewsapp.thedailynewscast.models.DataItem
+import com.thenewsapp.thedailynewscast.activities.R
+import com.thenewsapp.thedailynewscast.activities.SliderContents
+import com.thenewsapp.thedailynewscast.activities.activitiesfiles.CategoryActivity
+import com.thenewsapp.thedailynewscast.activities.activitiesfiles.NewsUrlDetailsActivity
 
 class ViewPagerAdapter(
     private val context: Context,

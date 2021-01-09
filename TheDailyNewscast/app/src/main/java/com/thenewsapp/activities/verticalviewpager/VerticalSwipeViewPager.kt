@@ -1,4 +1,4 @@
-package com.thenewsapp.thedailynewscast
+package com.thenewsapp.thedailynewscast.activities.verticalviewpager
 
 import android.content.Context
 import android.util.AttributeSet
@@ -11,7 +11,9 @@ import kotlin.math.abs
 class VerticalSwipeViewPager(context: Context, attrs: AttributeSet) : ViewPager(context, attrs) {
 
     init {
-        setPageTransformer(true, VerticalViewPagerTransform())
+        setPageTransformer(true,
+            VerticalViewPagerTransform()
+        )
         overScrollMode = View.OVER_SCROLL_NEVER
     }
 

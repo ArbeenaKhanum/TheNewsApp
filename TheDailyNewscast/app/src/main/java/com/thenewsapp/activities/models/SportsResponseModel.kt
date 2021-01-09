@@ -1,8 +1,8 @@
-package com.example.thedailynewscast.models
+package com.thenewsapp.thedailynewscast.activities.models
 
 import com.google.gson.annotations.SerializedName
 
-data class NewsResponseModel(
+data class SportsResponseModel(
 
 	@field:SerializedName("category")
 	val category: String? = null,

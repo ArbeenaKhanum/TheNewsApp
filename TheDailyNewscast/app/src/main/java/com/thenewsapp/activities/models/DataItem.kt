@@ -1,7 +1,6 @@
-package com.example.thedailynewscast.models
+package com.thenewsapp.thedailynewscast.activities.models
 
 import com.google.gson.annotations.SerializedName
-import java.io.Serializable
 
 data class DataItem(
 

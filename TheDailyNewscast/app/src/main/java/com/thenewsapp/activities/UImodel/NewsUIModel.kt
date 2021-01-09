@@ -1,6 +1,6 @@
-package com.example.thedailynewscast.UImodel
+package com.thenewsapp.thedailynewscast.activities.UImodel
 
-import com.example.thedailynewscast.models.DataItem
+import com.thenewsapp.thedailynewscast.activities.models.DataItem
 
 sealed class NewsUIModel {
     data class Success(val dataItemList : List<DataItem>) : NewsUIModel()

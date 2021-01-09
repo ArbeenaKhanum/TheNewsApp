@@ -1,4 +1,4 @@
-package com.example.thedailynewscast.Network
+package com.thenewsapp.thedailynewscast.activities.Network
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

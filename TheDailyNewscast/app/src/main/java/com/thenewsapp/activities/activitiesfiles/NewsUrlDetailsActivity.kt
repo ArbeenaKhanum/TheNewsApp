@@ -1,4 +1,4 @@
-package com.thenewsapp.thedailynewscast.activities
+package com.thenewsapp.thedailynewscast.activities.activitiesfiles
 
 import android.content.Intent
 import android.os.Build
@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.annotation.RequiresApi
-import com.thenewsapp.thedailynewscast.R
+import com.thenewsapp.thedailynewscast.activities.R
 import kotlinx.android.synthetic.main.activity_news_url_details.*
 
 class NewsUrlDetailsActivity : AppCompatActivity() {

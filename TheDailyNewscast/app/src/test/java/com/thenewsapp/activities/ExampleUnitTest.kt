@@ -1,4 +1,4 @@
-package com.thenewsapp.thedailynewscast
+package com.thenewsapp.activities
 
 import org.junit.Test
 

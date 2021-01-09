@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:906204319175:android:a45628f609791389c71de2",
         "android_client_info": {
-          "package_name": "com.thenewsapp.thedailynewscast"
+          "package_name": "com.thenewsapp.thedailynewscast.activities"
         }
       },
       "oauth_client": [

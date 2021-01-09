@@ -1,4 +1,4 @@
-package com.thenewsapp.thedailynewscast
+package com.thenewsapp.thedailynewscast.activities
 
 class SliderContents(val image : String)
 

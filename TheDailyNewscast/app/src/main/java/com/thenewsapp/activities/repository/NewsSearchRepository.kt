@@ -1,8 +1,8 @@
-package com.thenewsapp.thedailynewscast.repository
+package com.thenewsapp.thedailynewscast.activities.repository
 
-import com.thenewsapp.thedailynewscast.Network.Network
-import com.thenewsapp.thedailynewscast.Network.SearchApiClient
-import com.thenewsapp.thedailynewscast.models.NewsResponseModel
+import com.thenewsapp.thedailynewscast.activities.Network.Network
+import com.thenewsapp.thedailynewscast.activities.Network.SearchApiClient
+import com.thenewsapp.thedailynewscast.activities.models.NewsResponseModel
 import retrofit2.Callback
 
 class NewsSearchRepository(private val callback : Callback<NewsResponseModel>) {

@@ -1,9 +1,9 @@
-package com.thenewsapp.thedailynewscast.activities
+package com.thenewsapp.thedailynewscast.activities.activitiesfiles
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import com.thenewsapp.thedailynewscast.R
+import com.thenewsapp.thedailynewscast.activities.R
 
 class ExitActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,18 +1,17 @@
-package com.example.thedailynewscast.viewmodel
+package com.thenewsapp.thedailynewscast.activities.viewmodel
 
-import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.thedailynewscast.UImodel.NewsUIModel
-import com.example.thedailynewscast.models.DataItem
-import com.example.thedailynewscast.models.NewsResponseModel
-import com.example.thedailynewscast.repository.NewsRepository
+import com.thenewsapp.thedailynewscast.activities.UImodel.NewsUIModel
+import com.thenewsapp.thedailynewscast.activities.models.DataItem
+import com.thenewsapp.thedailynewscast.activities.models.NewsResponseModel
+import com.thenewsapp.thedailynewscast.activities.repository.NewsRepository
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class NewsViewModel() : ViewModel(), Callback<NewsResponseModel> {
+class NewsPoliticsViewModel() : ViewModel(), Callback<NewsResponseModel> {
     private val newsRepository = NewsRepository(this)
     private val mutableLiveData = MutableLiveData<NewsUIModel>()
     val liveDataForNews: LiveData<NewsUIModel> = mutableLiveData

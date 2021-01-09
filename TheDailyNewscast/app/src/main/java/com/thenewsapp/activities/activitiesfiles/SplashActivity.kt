@@ -1,11 +1,11 @@
-package com.thenewsapp.thedailynewscast.activities
+package com.thenewsapp.thedailynewscast.activities.activitiesfiles
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.animation.AnimationUtils
-import com.thenewsapp.thedailynewscast.R
+import com.thenewsapp.thedailynewscast.activities.R
 import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : AppCompatActivity() {
@@ -14,7 +14,7 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         val runnable = Runnable {
-            val splashIntent = Intent(this, LoginActivity::class.java)
+            val splashIntent = Intent(this, MainActivity::class.java)
             startActivity(splashIntent)
             finish()
         }
@@ -25,13 +25,16 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun animationOnSplash() {
-        val splashAnimation = AnimationUtils.loadAnimation(this,
+        val splashAnimation = AnimationUtils.loadAnimation(
+            this,
             R.anim.transitions_splash
         )
-        val lTRAnimation = AnimationUtils.loadAnimation(this,
+        val lTRAnimation = AnimationUtils.loadAnimation(
+            this,
             R.anim.left_to_right
         )
-        val rTLAnimation = AnimationUtils.loadAnimation(this,
+        val rTLAnimation = AnimationUtils.loadAnimation(
+            this,
             R.anim.right_to_left
         )
         tvTheDaily.animation = lTRAnimation

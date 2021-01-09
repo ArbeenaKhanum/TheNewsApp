@@ -7,7 +7,7 @@
     android:background="#FAEDC9"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".activities.ExitActivity">
+    tools:context=".activitiesfiles.ExitActivity">
 
     <ImageView
         android:layout_width="wrap_content"

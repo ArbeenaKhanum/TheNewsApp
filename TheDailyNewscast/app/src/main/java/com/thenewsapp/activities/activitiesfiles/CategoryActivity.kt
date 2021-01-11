@@ -7,6 +7,7 @@ import android.view.MotionEvent
 import android.view.View
 import com.r0adkll.slidr.model.SlidrInterface
 import com.thenewsapp.activities.activitiesfiles.SettingsActivity
+import com.thenewsapp.activities.fragments.NewsBusinessFragment
 import com.thenewsapp.thedailynewscast.activities.R
 import com.thenewsapp.thedailynewscast.activities.fragments.NewsEntertainmentFragment
 import com.thenewsapp.thedailynewscast.activities.fragments.NewsIndiaFragment
@@ -45,6 +46,7 @@ class CategoryActivity : AppCompatActivity(), View.OnClickListener {
         cvSports.setOnClickListener(this)
         cvEntertainment.setOnClickListener(this)
         cvIndia.setOnClickListener(this)
+        cvBusiness.setOnClickListener(this)
 
     }
 
@@ -76,6 +78,12 @@ class CategoryActivity : AppCompatActivity(), View.OnClickListener {
                 rlSearchBar.visibility = View.GONE
                 scrollView.visibility = View.GONE
             }
+
+            R.id.cvBusiness -> {
+                openBusinessFragment()
+                rlSearchBar.visibility = View.GONE
+                scrollView.visibility = View.GONE
+            }
         }
     }
 
@@ -95,6 +103,12 @@ class CategoryActivity : AppCompatActivity(), View.OnClickListener {
         val sportsViewFragment = SportsViewFragment()
         supportFragmentManager.beginTransaction().replace(R.id.llCategoryContainer, sportsViewFragment, "SportsViewFragment")
             .addToBackStack("sportsViewFragment").commit()
+    }
+
+    private fun openBusinessFragment() {
+        val businessFragment = NewsBusinessFragment()
+        supportFragmentManager.beginTransaction().replace(R.id.llCategoryContainer, businessFragment, "NewsBusinessFragment")
+            .addToBackStack("newsBusinessFragment").commit()
     }
 
     private fun openPoliticsFragment() {

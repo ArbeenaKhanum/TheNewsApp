@@ -19,6 +19,7 @@ import com.google.firebase.ktx.Firebase
 import com.thenewsapp.activities.activitiesfiles.LoggedInSettingActivity
 import com.thenewsapp.activities.activitiesfiles.SettingsActivity
 import com.thenewsapp.thedailynewscast.activities.R
+import kotlinx.android.synthetic.main.activity_category.*
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity(), View.OnClickListener {
@@ -55,6 +56,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         super.onStart()
         val currentUser = auth.currentUser
         if (currentUser != null) {
+
             Handler(mainLooper).postDelayed(Runnable {
                 updateUI(currentUser)
             }, 3500)

@@ -65,6 +65,7 @@ class NewsDetailsFragment : Fragment(), RecyclerviewClickListener {
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
                 newsSearchViewModel.callSearchApi(query.toString())
+                tvSearchForNews.visibility = View.GONE
                 flProgressBar.visibility = View.VISIBLE
                 return false
             }
@@ -89,6 +90,7 @@ class NewsDetailsFragment : Fragment(), RecyclerviewClickListener {
             when(it) {
                 is NewsSearchUIModel.Success -> {
                     newsSearchListAdapter.updateNewsSearchList(it.newsResponseModel.data as List<DataItem>)
+                    tvSearchForNews.visibility = View.GONE
                     flProgressBar.visibility = View.GONE
                 }
 

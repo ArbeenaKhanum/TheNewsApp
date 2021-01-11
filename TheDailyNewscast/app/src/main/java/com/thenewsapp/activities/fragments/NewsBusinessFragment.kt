@@ -1,4 +1,4 @@
-package com.thenewsapp.thedailynewscast.activities.fragments
+package com.thenewsapp.activities.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,19 +6,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.thenewsapp.thedailynewscast.activities.Network.EntertainmentApiClient
+import com.thenewsapp.activities.Network.BusinessApiClient
+import com.thenewsapp.activities.models.BusinessResponseModel
 import com.thenewsapp.thedailynewscast.activities.Network.Network
 import com.thenewsapp.thedailynewscast.activities.R
 import com.thenewsapp.thedailynewscast.activities.adapter.NewsListAdapter
 import com.thenewsapp.thedailynewscast.activities.listener.RecyclerviewClickListener
 import com.thenewsapp.thedailynewscast.activities.models.DataItem
-import com.thenewsapp.thedailynewscast.activities.models.EntertainmentResponseModel
-import kotlinx.android.synthetic.main.fragment_news_entertainment.*
+import kotlinx.android.synthetic.main.fragment_news_business.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class NewsEntertainmentFragment : Fragment(), RecyclerviewClickListener {
+class NewsBusinessFragment : Fragment(), RecyclerviewClickListener {
+
     private lateinit var newsListAdapter: NewsListAdapter
     private val dataItemList = emptyList<DataItem>()
 
@@ -31,42 +32,41 @@ class NewsEntertainmentFragment : Fragment(), RecyclerviewClickListener {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_news_entertainment, container, false)
+        return inflater.inflate(R.layout.fragment_news_business, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setRecyclerEntertainment()
-        flEntertainmentProgressBar.visibility = View.VISIBLE
-        callEntertainmentApi()
+        setRecyclerBusiness()
+        flBusinessProgressBar.visibility = View.VISIBLE
+        callBusinessApi()
     }
 
-    private fun callEntertainmentApi() {
-        val entertainmentApiClient = Network.getInstance().create(EntertainmentApiClient::class.java)
-        val call = entertainmentApiClient.getEntertainmentData()
-        call.enqueue(object : Callback<EntertainmentResponseModel>{
-            override fun onFailure(call: Call<EntertainmentResponseModel>, t: Throwable) {
-                flEntertainmentProgressBar.visibility = View.GONE
+    private fun callBusinessApi() {
+        val businessApiClient = Network.getInstance().create(BusinessApiClient::class.java)
+        val call = businessApiClient.getNewsBusinessData()
+        call.enqueue(object : Callback<BusinessResponseModel> {
+            override fun onFailure(call: Call<BusinessResponseModel>, t: Throwable) {
+                flBusinessProgressBar.visibility = View.GONE
             }
 
             override fun onResponse(
-                call: Call<EntertainmentResponseModel>,
-                response: Response<EntertainmentResponseModel>
+                call: Call<BusinessResponseModel>,
+                response: Response<BusinessResponseModel>
             ) {
                 response.body()?.let {
-                    flEntertainmentProgressBar.visibility = View.GONE
+                    flBusinessProgressBar.visibility = View.GONE
                     newsListAdapter.updateNewsList(it.data as List<DataItem>)
                 }
             }
 
         })
-
     }
 
-    private fun setRecyclerEntertainment()  {
+    private fun setRecyclerBusiness() {
         newsListAdapter = NewsListAdapter(dataItemList, this)
         val layoutManager = LinearLayoutManager( context)
-        rlListOfEntertainment.apply {
+        rlListOfBusiness.apply {
             this.layoutManager = layoutManager
             this.adapter = newsListAdapter
         }
@@ -75,4 +75,5 @@ class NewsEntertainmentFragment : Fragment(), RecyclerviewClickListener {
     override fun onReadMoreClicked(position: Int, dataItem: DataItem) {
 
     }
+
 }

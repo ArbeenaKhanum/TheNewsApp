@@ -24,7 +24,16 @@ class ReadMoreFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        searchListBackBtn.setOnClickListener {
+            openSearchListFragment()
+        }
+
         getReadMoreBundle()
+    }
+
+    private fun openSearchListFragment() {
+
     }
 
     private fun getReadMoreBundle() {

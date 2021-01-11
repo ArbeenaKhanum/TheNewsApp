@@ -16,6 +16,22 @@ class LoggedInSettingActivity : AppCompatActivity() {
         ibGoogleSignOut.setOnClickListener {
             logOutFromGoogleAcc()
         }
+
+        llLoginShare.setOnClickListener {
+            val shareIntent = Intent()
+            shareIntent.action = Intent.ACTION_SEND
+            shareIntent.type = "text/plain"
+            shareIntent.putExtra(
+                Intent.EXTRA_TEXT,
+                "Stay updated with the latest news with The Daily Newscast App. Get it at https://thedailynewscast.com/dl/"
+            );
+            startActivity(
+                Intent.createChooser(
+                    shareIntent,
+                    getString(R.string.share_app)
+                )
+            )
+        }
     }
 
     private fun logOutFromGoogleAcc() {

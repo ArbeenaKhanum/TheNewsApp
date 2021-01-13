@@ -1,7 +1,7 @@
 package com.thenewsapp.thedailynewscast.activities.models
 
 import com.google.gson.annotations.SerializedName
-
+import java.io.Serializable
 data class DataItem(
 
 	@field:SerializedName("author")
@@ -17,7 +17,7 @@ data class DataItem(
 	val imageUrl: String? = null,
 
 	@field:SerializedName("readMoreUrl")
-	val readMoreUrl: Any? = null,
+	val readMoreUrl: String? = null,
 
 	@field:SerializedName("time")
 	val time: String? = null,

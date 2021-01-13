@@ -58,14 +58,14 @@
                 android:padding="2dp"
                 android:text="Swipe left to read more"
                 android:textColor="@android:color/darker_gray"
-                android:textSize="10sp" />
+                android:textSize="11sp" />
 
         </LinearLayout>
 
         <ImageView
             android:id="@+id/ivUrl"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="60dp"
             android:layout_gravity="bottom"
             android:background="#716F6F"
             android:scaleType="centerCrop" />
@@ -77,7 +77,7 @@
             android:layout_gravity="bottom"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginBottom="26dp"
+            android:layout_marginBottom="20dp"
             android:padding="2dp"
             android:text="Heading"
             android:textColor="@color/white"
@@ -90,9 +90,8 @@
             android:layout_gravity="bottom"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="8dp"
             android:padding="2dp"
-            android:text="Tap to read more"
             android:textColor="@color/white"
             android:textSize="11sp" />
 

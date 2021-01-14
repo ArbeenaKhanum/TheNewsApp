@@ -8,6 +8,7 @@ import android.view.View
 import com.r0adkll.slidr.model.SlidrInterface
 import com.thenewsapp.activities.activitiesfiles.SettingsActivity
 import com.thenewsapp.activities.fragments.NewsBusinessFragment
+import com.thenewsapp.activities.fragments.NewsTechnologyFragment
 import com.thenewsapp.thedailynewscast.activities.R
 import com.thenewsapp.thedailynewscast.activities.fragments.NewsEntertainmentFragment
 import com.thenewsapp.thedailynewscast.activities.fragments.NewsIndiaFragment
@@ -47,6 +48,7 @@ class CategoryActivity : AppCompatActivity(), View.OnClickListener {
         cvEntertainment.setOnClickListener(this)
         cvIndia.setOnClickListener(this)
         cvBusiness.setOnClickListener(this)
+        cvTechnology.setOnClickListener(this)
 
     }
 
@@ -54,7 +56,7 @@ class CategoryActivity : AppCompatActivity(), View.OnClickListener {
         rlSearchBar.visibility = View.VISIBLE
         scrollView.visibility = View.VISIBLE
 
-        when(v?.id) {
+        when (v?.id) {
             R.id.cvPolitics -> {
                 openPoliticsFragment()
                 rlSearchBar.visibility = View.GONE
@@ -84,36 +86,54 @@ class CategoryActivity : AppCompatActivity(), View.OnClickListener {
                 rlSearchBar.visibility = View.GONE
                 scrollView.visibility = View.GONE
             }
+
+            R.id.cvTechnology -> {
+                openTechnologyFragment()
+                rlSearchBar.visibility = View.GONE
+                scrollView.visibility = View.GONE
+            }
         }
+    }
+
+    private fun openTechnologyFragment() {
+        val technologyFragment = NewsTechnologyFragment()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.llCategoryContainer, technologyFragment, "TechnologyFragment")
+            .addToBackStack("technologyFragment").commit()
     }
 
     private fun openIndiaFragment() {
         val newsIndiaFragment = NewsIndiaFragment()
-        supportFragmentManager.beginTransaction().replace(R.id.llCategoryContainer, newsIndiaFragment, "NewsIndiaFragment")
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.llCategoryContainer, newsIndiaFragment, "NewsIndiaFragment")
             .addToBackStack("newsIndiaFragment").commit()
     }
 
     private fun openEntertainmentFragment() {
         val entertainmentFragment = NewsEntertainmentFragment()
-        supportFragmentManager.beginTransaction().replace(R.id.llCategoryContainer, entertainmentFragment, "NewsEntertainmentFragment")
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.llCategoryContainer, entertainmentFragment, "NewsEntertainmentFragment")
             .addToBackStack("newsEntertainmentFragment").commit()
     }
 
     private fun openSportsFragment() {
         val sportsViewFragment = SportsViewFragment()
-        supportFragmentManager.beginTransaction().replace(R.id.llCategoryContainer, sportsViewFragment, "SportsViewFragment")
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.llCategoryContainer, sportsViewFragment, "SportsViewFragment")
             .addToBackStack("sportsViewFragment").commit()
     }
 
     private fun openBusinessFragment() {
         val businessFragment = NewsBusinessFragment()
-        supportFragmentManager.beginTransaction().replace(R.id.llCategoryContainer, businessFragment, "NewsBusinessFragment")
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.llCategoryContainer, businessFragment, "NewsBusinessFragment")
             .addToBackStack("newsBusinessFragment").commit()
     }
 
     private fun openPoliticsFragment() {
         val politicsViewFragment = PoliticsViewFragment()
-        supportFragmentManager.beginTransaction().replace(R.id.llCategoryContainer, politicsViewFragment, "PoliticsViewFragment")
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.llCategoryContainer, politicsViewFragment, "PoliticsViewFragment")
             .addToBackStack("politicsViewFragment").commit()
     }
 

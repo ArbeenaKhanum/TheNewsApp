@@ -36,6 +36,8 @@ class MainActivity : AppCompatActivity() {
     private val imageUrl = ArrayList<String>()
     private val readMoreUrl = ArrayList<String>()
     private val url = ArrayList<String>()
+    private val time = ArrayList<String>()
+    private val date = ArrayList<String>()
 
     private var dbReference: DatabaseReference? = null
 
@@ -106,7 +108,7 @@ class MainActivity : AppCompatActivity() {
                 mainVerticalViewPager.adapter =
                     ViewPagerAdapter(
                         this@MainActivity, sliderContents,
-                        title, content, imageUrl, readMoreUrl, url, mainVerticalViewPager
+                        title, content, imageUrl, readMoreUrl, url, date, time, mainVerticalViewPager
                     )
                 }
             }

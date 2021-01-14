@@ -27,6 +27,8 @@ class ViewPagerAdapter(
     val imageUrl: ArrayList<String>,
     val readMoreUrl: ArrayList<String>,
     val url: ArrayList<String>,
+    val date: ArrayList<String>,
+    val time : ArrayList<String>,
     val mainVerticalViewPager: VerticalViewPager
 ) : PagerAdapter() {
 
@@ -68,6 +70,12 @@ class ViewPagerAdapter(
 
         val newsHeading = itemView?.findViewById<TextView>(R.id.tvHeading)
         newsHeading?.text = title[position]
+
+        val date = itemView?.findViewById<TextView>(R.id.tvDate)
+
+
+        val time = itemView?.findViewById<TextView>(R.id.tvTime)
+
 
         mainVerticalViewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
             override fun onPageScrollStateChanged(state: Int) {

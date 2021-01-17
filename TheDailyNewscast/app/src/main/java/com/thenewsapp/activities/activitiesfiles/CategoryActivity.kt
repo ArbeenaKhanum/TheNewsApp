@@ -7,8 +7,8 @@ import android.view.MotionEvent
 import android.view.View
 import com.r0adkll.slidr.model.SlidrInterface
 import com.thenewsapp.activities.activitiesfiles.SettingsActivity
-import com.thenewsapp.activities.fragments.NewsBusinessFragment
-import com.thenewsapp.activities.fragments.NewsTechnologyFragment
+import com.thenewsapp.activities.fragments.*
+import com.thenewsapp.activities.models.AutomobileResponseModel
 import com.thenewsapp.thedailynewscast.activities.R
 import com.thenewsapp.thedailynewscast.activities.fragments.NewsEntertainmentFragment
 import com.thenewsapp.thedailynewscast.activities.fragments.NewsIndiaFragment
@@ -49,7 +49,16 @@ class CategoryActivity : AppCompatActivity(), View.OnClickListener {
         cvIndia.setOnClickListener(this)
         cvBusiness.setOnClickListener(this)
         cvTechnology.setOnClickListener(this)
-
+        cvTravel.setOnClickListener(this)
+        cvFashion.setOnClickListener(this)
+        cvStartUps.setOnClickListener(this)
+        cvHatke.setOnClickListener(this)
+        cvAutomobile.setOnClickListener(this)
+        cvHealthFitness.setOnClickListener(this)
+        cvEducation.setOnClickListener(this)
+        cvScience.setOnClickListener(this)
+        cvInternational.setOnClickListener(this)
+        cvMiscellanous.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -92,7 +101,137 @@ class CategoryActivity : AppCompatActivity(), View.OnClickListener {
                 rlSearchBar.visibility = View.GONE
                 scrollView.visibility = View.GONE
             }
+
+            R.id.cvTravel -> {
+                openTravelFragment()
+                rlSearchBar.visibility = View.GONE
+                scrollView.visibility = View.GONE
+            }
+
+            R.id.cvFashion -> {
+                openFashionFragment()
+                rlSearchBar.visibility = View.GONE
+                scrollView.visibility = View.GONE
+            }
+
+            R.id.cvStartUps -> {
+                openStartupFragment()
+                rlSearchBar.visibility = View.GONE
+                scrollView.visibility = View.GONE
+            }
+
+            R.id.cvHatke -> {
+                openHatkeFragment()
+                rlSearchBar.visibility = View.GONE
+                scrollView.visibility = View.GONE
+            }
+
+            R.id.cvAutomobile -> {
+                openAutomobileFragment()
+                rlSearchBar.visibility = View.GONE
+                scrollView.visibility = View.GONE
+            }
+
+            R.id.cvHealthFitness -> {
+                openHealthFragment()
+                rlSearchBar.visibility = View.GONE
+                scrollView.visibility = View.GONE
+            }
+
+            R.id.cvEducation -> {
+                openEducationFragment()
+                rlSearchBar.visibility = View.GONE
+                scrollView.visibility = View.GONE
+            }
+
+            R.id.cvScience -> {
+                openScienceFragment()
+                rlSearchBar.visibility = View.GONE
+                scrollView.visibility = View.GONE
+            }
+
+            R.id.cvInternational -> {
+                openInternationalFragment()
+                rlSearchBar.visibility = View.GONE
+                scrollView.visibility = View.GONE
+            }
+
+            R.id.cvMiscellanous -> {
+                openMiscellanousFragment()
+                rlSearchBar.visibility = View.GONE
+                scrollView.visibility = View.GONE
+            }
         }
+    }
+
+    private fun openMiscellanousFragment() {
+        val miscellanousNewsFragment = MiscellanousNewsFragment()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.llCategoryContainer, miscellanousNewsFragment, "MiscellanousNewsFragment")
+            .addToBackStack("miscellanousNewsFragment").commit()
+    }
+
+    private fun openInternationalFragment() {
+        val internationalNewsFragment = InternationalNewsFragment()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.llCategoryContainer, internationalNewsFragment, "InternationalNewsFragment")
+            .addToBackStack("internationalNewsFragment").commit()
+    }
+
+    private fun openScienceFragment() {
+        val scienceNewsFragment = ScienceNewsFragment()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.llCategoryContainer, scienceNewsFragment, "ScienceNewsFragment")
+            .addToBackStack("scienceNewsFragment").commit()
+    }
+
+    private fun openEducationFragment() {
+        val educationNewsFragment = EducationNewsFragment()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.llCategoryContainer, educationNewsFragment, "EducationNewsFragment")
+            .addToBackStack("educationNewsFragment").commit()
+    }
+
+    private fun openHealthFragment() {
+       val healthFitnessFragment = HealthFitnessFragment()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.llCategoryContainer, healthFitnessFragment, "HealthFitnessFragment")
+            .addToBackStack("healthFitnessFragment").commit()
+    }
+
+    private fun openAutomobileFragment() {
+        val automobileNewsFragment = AutomobileNewsFragment()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.llCategoryContainer, automobileNewsFragment, "AutomobileNewsFragment")
+            .addToBackStack("automobileNewsFragment").commit()
+    }
+
+    private fun openHatkeFragment() {
+        val hatkeNewsFragment = HatkeNewsFragment()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.llCategoryContainer, hatkeNewsFragment, "HatkeNewsFragment")
+            .addToBackStack("hatkeNewsFragment").commit()
+    }
+
+    private fun openStartupFragment() {
+        val startupFragment = StartupFragment()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.llCategoryContainer, startupFragment, "StartupFragment")
+            .addToBackStack("startupFragment").commit()
+    }
+
+    private fun openFashionFragment() {
+        val fashionNewsFragment = FashionNewsFragment()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.llCategoryContainer, fashionNewsFragment, "FashionNewsFragment")
+            .addToBackStack("fashionNewsFragment").commit()
+    }
+
+    private fun openTravelFragment() {
+        val travelNewsFragment = TravelNewsFragment()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.llCategoryContainer, travelNewsFragment, "TravelNewsFragment")
+            .addToBackStack("travelNewsFragment").commit()
     }
 
     private fun openTechnologyFragment() {

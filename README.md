@@ -2,7 +2,7 @@
 
 ###### The Daily Newscast app provides the latest news from all over the world.
 
-## Tech Stacks Used
+## Technologies
 
 * Kotlin
 * Retrofit

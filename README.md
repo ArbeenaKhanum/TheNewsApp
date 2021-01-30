@@ -40,9 +40,9 @@ Right swipe on main home screen will open the categories activity screen. The ca
 <br/><br/>
 User can also search for the news category of their choice with the help of "search for news" search bar. List of news related to the particular category with will displayed when the user search it.
 
-|**Politics News**|**Sports News**|**Entertainment News**|**Technology News**|
-|:---|:--|:--|:--|
-|<img src=vimages/politics_search.jpeg height="500px"/>|<img src=vimages/sports_search.jpeg height="500px"/>|<img src=vimages/entertainment_search.jpeg height="500px"/>|<img src=vimages/technology_search.jpeg height="500px"/>|
+|**Politics News**|**Entertainment News**|**Technology News**|
+|:---|:--|:--|
+|<img src=vimages/politics_search.jpeg height="500px"/>|<img src=vimages/entertainment_search.jpeg height="500px"/>|<img src=vimages/technology_search.jpeg height="500px"/>|
 
 <br/><br/>
 On click of settings button on categories screen, settings screen will be opened. On click of "Sign In" button, the user can sign in to the app with the help of G-mail address.

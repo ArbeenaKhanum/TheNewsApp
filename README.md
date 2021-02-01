@@ -45,6 +45,7 @@ User can also search for the news category of their choice with the help of "sea
 |<img src=vimages/politics_search.jpeg height="500px"/>|<img src=vimages/entertainment_search.jpeg height="500px"/>|<img src=vimages/technology_search.jpeg height="500px"/>|
 
 <br/><br/>
+
 On click of settings button on categories screen, settings screen will be opened. On click of "Sign In" button, the user can sign in to the app with the help of G-mail address.
 When the user is successfully logged in, the settings screen will look like the Logout screen. To logout from the app, user can click on the Google icon at the top of the screen.
 

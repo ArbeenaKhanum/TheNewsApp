@@ -5,7 +5,7 @@
 ## Technologies
 
 * Kotlin
-* Retrofit
+* REST API Retrofit
 * Vertical Viewpager Library
 
 ## Features
